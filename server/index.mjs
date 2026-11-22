@@ -324,7 +324,6 @@ const verifyPassword = async (password, salt, expectedHash) => {
 };
 
 function readSeedState() {
-  if (PRODUCTION) return { language: 'en', areaUnit: 'bigha', introSeen: false, savedListingIds: [], recentlyViewedIds: [], recentSearches: [], listings: [], discrepancies: [], cases: [], enquiries: [], documents: [], auditEvents: [] };
   const seeds = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'seeds.json'), 'utf8'));
   return {
     language: 'en', areaUnit: 'bigha', introSeen: false, savedListingIds: ['lst-1', 'lst-2'],
@@ -335,8 +334,18 @@ function readSeedState() {
   };
 }
 
-if (!db.prepare('SELECT id FROM app_state WHERE id=1').get()) {
+const existingAppState = db.prepare('SELECT state_json FROM app_state WHERE id=1').get();
+if (!existingAppState) {
   db.prepare('INSERT INTO app_state(id,state_json,updated_at) VALUES(1,?,?)').run(JSON.stringify(readSeedState()), now());
+} else {
+  try {
+    const parsed = JSON.parse(existingAppState.state_json);
+    if (!parsed.listings || parsed.listings.length === 0) {
+      db.prepare('UPDATE app_state SET state_json=?,updated_at=? WHERE id=1').run(JSON.stringify(readSeedState()), now());
+    }
+  } catch (e) {
+    db.prepare('UPDATE app_state SET state_json=?,updated_at=? WHERE id=1').run(JSON.stringify(readSeedState()), now());
+  }
 }
 
 async function ensureDemoUsers() {
