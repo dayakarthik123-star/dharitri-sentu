@@ -1,0 +1,1445 @@
+{
+  "SEED_AUDIT_EVENTS": [
+    {
+      "id": "AUD-001",
+      "timestamp": "2026-10-18T14:20:00Z",
+      "actorEmail": "reviewer@demo.dharitrisentu.test",
+      "actorRole": "reviewer",
+      "actionType": "DISCREPANCY_FLAGGED",
+      "targetId": "DSC-001",
+      "summary": "Flagged 0.15 Bigha area variance on Parcel AS-KMP-001 (2.50 vs 2.35 Bigha synthetic record)."
+    },
+    {
+      "id": "AUD-002",
+      "timestamp": "2026-10-19T09:45:00Z",
+      "actorEmail": "reviewer@demo.dharitrisentu.test",
+      "actorRole": "reviewer",
+      "actionType": "PASSPORT_REVIEWED",
+      "targetId": "AS-KMP-002",
+      "summary": "Marked Land Trust Passport AS-KMP-002 as \"Reviewed in Demo\" (Not official government verification)."
+    },
+    {
+      "id": "AUD-003",
+      "timestamp": "2026-10-20T14:38:00Z",
+      "actorEmail": "seller@demo.dharitrisentu.test",
+      "actorRole": "seller",
+      "actionType": "DOCUMENT_SHARED",
+      "targetId": "DOC-LL-002",
+      "summary": "Seller granted buyer@demo.dharitrisentu.test access to Sample Boundary Trace Sketch (DOC-LL-002)."
+    },
+    {
+      "id": "AUD-004",
+      "timestamp": "2026-10-21T09:15:00Z",
+      "actorEmail": "reviewer@demo.dharitrisentu.test",
+      "actorRole": "reviewer",
+      "actionType": "LISTING_STATUS_UPDATED",
+      "targetId": "lst-6",
+      "summary": "Updated listing AS-SON-006 status to \"More Information Required\" pending classification evidence."
+    }
+  ],
+  "SEED_CASES": [
+    {
+      "id": "DD-2026-001",
+      "parcelId": "AS-KMP-001",
+      "listingId": "lst-1",
+      "buyerEmail": "buyer@demo.dharitrisentu.test",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "status": "In Progress",
+      "createdAt": "2026-10-18T10:00:00Z",
+      "updatedAt": "2026-10-22T15:30:00Z",
+      "summaryNote": "Active buyer due-diligence checklist for Changsari 2.5 Bigha parcel. 5 of 9 steps completed; awaiting seller clarification on the 0.15 Bigha area variance.",
+      "tasks": [
+        {
+          "id": "tsk-1",
+          "titleKey": "confirmParcelRef",
+          "title": "1. Confirm sample parcel reference (Dag 412 / Patta 89)",
+          "responsibleRole": "buyer",
+          "status": "Completed",
+          "note": "Checked parcel ID AS-KMP-001 on interactive parcel map.",
+          "evidenceReference": "DOC-LL-001",
+          "updatedAt": "2026-10-18T10:30:00Z"
+        },
+        {
+          "id": "tsk-2",
+          "titleKey": "reviewAvailableEvidence",
+          "title": "2. Review available seller-supplied evidence pack",
+          "responsibleRole": "buyer",
+          "status": "Completed",
+          "note": "Reviewed sample Jamabandi extract and seller declaration in LandLocker.",
+          "evidenceReference": "DOC-LL-001, DOC-LL-002",
+          "updatedAt": "2026-10-19T11:00:00Z"
+        },
+        {
+          "id": "tsk-3",
+          "titleKey": "compareSuppliedFields",
+          "title": "3. Compare supplied fields against demo reference data",
+          "responsibleRole": "reviewer",
+          "status": "Completed",
+          "note": "Automated comparison matched 4 fields and flagged 0.15 Bigha area discrepancy (DSC-001).",
+          "evidenceReference": "DSC-001",
+          "updatedAt": "2026-10-19T14:20:00Z"
+        },
+        {
+          "id": "tsk-4",
+          "titleKey": "requestMissingDocs",
+          "title": "4. Request missing documentation or area clarification",
+          "responsibleRole": "buyer",
+          "status": "Completed",
+          "note": "Sent enquiry ENQ-001 requesting updated trace sketch for the 2.50 vs 2.35 Bigha variance.",
+          "evidenceReference": "ENQ-001",
+          "updatedAt": "2026-10-20T09:15:00Z"
+        },
+        {
+          "id": "tsk-5",
+          "titleKey": "reviewEncumbrance",
+          "title": "5. Review available restriction/encumbrance evidence",
+          "responsibleRole": "reviewer",
+          "status": "In Progress",
+          "note": "Inspecting sample self-declared encumbrance note DOC-LL-003.",
+          "evidenceReference": "DOC-LL-003",
+          "updatedAt": "2026-10-21T16:00:00Z"
+        },
+        {
+          "id": "tsk-6",
+          "titleKey": "reviewLocationInfo",
+          "title": "6. Review location, road access, and flood-terrace context",
+          "responsibleRole": "buyer",
+          "status": "Completed",
+          "note": "Reviewed 360° virtual tour and 18 ft road access notes.",
+          "evidenceReference": "Virtual Tour AS-KMP-001",
+          "updatedAt": "2026-10-21T18:00:00Z"
+        },
+        {
+          "id": "tsk-7",
+          "titleKey": "recordOutstandingIssues",
+          "title": "7. Record outstanding discrepancy issues & conditions",
+          "responsibleRole": "buyer",
+          "status": "In Progress",
+          "note": "Noted 0.15 Bigha variance to be verified via physical survey prior to any real-world agreement.",
+          "evidenceReference": "DSC-001",
+          "updatedAt": "2026-10-22T11:00:00Z"
+        },
+        {
+          "id": "tsk-8",
+          "titleKey": "completeHumanReview",
+          "title": "8. Complete human reviewer sign-off in demo workflow",
+          "responsibleRole": "reviewer",
+          "status": "Pending",
+          "note": "Awaiting seller trace map upload before completing demo review.",
+          "evidenceReference": "Pending",
+          "updatedAt": "2026-10-22T11:00:00Z"
+        },
+        {
+          "id": "tsk-9",
+          "titleKey": "saveFinalCaseSummary",
+          "title": "9. Save final due-diligence case summary (Non-legal demo record)",
+          "responsibleRole": "buyer",
+          "status": "Pending",
+          "note": "Will be finalised after human review task completes.",
+          "evidenceReference": "N/A",
+          "updatedAt": "2026-10-22T11:00:00Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "ev-1",
+          "actor": "Ananya Baruah (Demo Buyer)",
+          "role": "buyer",
+          "action": "Opened Due-Diligence Case DD-2026-001 for Parcel AS-KMP-001",
+          "timestamp": "2026-10-18T10:00:00Z"
+        },
+        {
+          "id": "ev-2",
+          "actor": "Debajit Hazarika (Demo Reviewer)",
+          "role": "reviewer",
+          "action": "Linked Discrepancy Case DSC-001 (0.15 Bigha area variance) to checklist task #3",
+          "timestamp": "2026-10-19T14:20:00Z"
+        },
+        {
+          "id": "ev-3",
+          "actor": "Ananya Baruah (Demo Buyer)",
+          "role": "buyer",
+          "action": "Requested trace map clarification from seller via Enquiry ENQ-001",
+          "timestamp": "2026-10-20T09:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "DD-2026-002",
+      "parcelId": "AS-BTR-017",
+      "listingId": "lst-4",
+      "buyerEmail": "buyer@demo.dharitrisentu.test",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "status": "In Progress",
+      "createdAt": "2026-10-20T12:00:00Z",
+      "updatedAt": "2026-10-22T09:00:00Z",
+      "summaryNote": "Due-diligence evaluation for 12.5 Bigha Barama agricultural parcel in Baksa.",
+      "tasks": [
+        {
+          "id": "tsk-201",
+          "titleKey": "confirmParcelRef",
+          "title": "1. Confirm sample parcel reference (AS-BTR-017)",
+          "responsibleRole": "buyer",
+          "status": "Completed",
+          "note": "Verified parcel polygon in Baksa district view.",
+          "evidenceReference": "Map AS-BTR-017",
+          "updatedAt": "2026-10-20T12:30:00Z"
+        },
+        {
+          "id": "tsk-202",
+          "titleKey": "reviewAvailableEvidence",
+          "title": "2. Review available seller-supplied evidence pack",
+          "responsibleRole": "buyer",
+          "status": "Completed",
+          "note": "Reviewed synthetic Patta extract.",
+          "evidenceReference": "DOC-LL-004",
+          "updatedAt": "2026-10-21T10:00:00Z"
+        },
+        {
+          "id": "tsk-203",
+          "titleKey": "compareSuppliedFields",
+          "title": "3. Compare supplied fields against demo reference data",
+          "responsibleRole": "reviewer",
+          "status": "Completed",
+          "note": "Flagged 12.5 vs 12.0 Bigha discrepancy (DSC-002).",
+          "evidenceReference": "DSC-002",
+          "updatedAt": "2026-10-21T11:30:00Z"
+        },
+        {
+          "id": "tsk-204",
+          "titleKey": "requestMissingDocs",
+          "title": "4. Request missing documentation or area clarification",
+          "responsibleRole": "buyer",
+          "status": "In Progress",
+          "note": "Preparing document request for Baksa trace sketch.",
+          "evidenceReference": "Pending",
+          "updatedAt": "2026-10-22T09:00:00Z"
+        },
+        {
+          "id": "tsk-205",
+          "titleKey": "reviewEncumbrance",
+          "title": "5. Review available restriction/encumbrance evidence",
+          "responsibleRole": "reviewer",
+          "status": "Pending",
+          "note": "Awaiting document upload.",
+          "evidenceReference": "Pending",
+          "updatedAt": "2026-10-22T09:00:00Z"
+        },
+        {
+          "id": "tsk-206",
+          "titleKey": "reviewLocationInfo",
+          "title": "6. Review location, road access, and flood-terrace context",
+          "responsibleRole": "buyer",
+          "status": "Completed",
+          "note": "Checked Barama highway proximity.",
+          "evidenceReference": "Map AS-BTR-017",
+          "updatedAt": "2026-10-22T09:00:00Z"
+        },
+        {
+          "id": "tsk-207",
+          "titleKey": "recordOutstandingIssues",
+          "title": "7. Record outstanding discrepancy issues & conditions",
+          "responsibleRole": "buyer",
+          "status": "Pending",
+          "note": "Pending seller response.",
+          "evidenceReference": "DSC-002",
+          "updatedAt": "2026-10-22T09:00:00Z"
+        },
+        {
+          "id": "tsk-208",
+          "titleKey": "completeHumanReview",
+          "title": "8. Complete human reviewer sign-off in demo workflow",
+          "responsibleRole": "reviewer",
+          "status": "Pending",
+          "note": "Pending.",
+          "evidenceReference": "Pending",
+          "updatedAt": "2026-10-22T09:00:00Z"
+        },
+        {
+          "id": "tsk-209",
+          "titleKey": "saveFinalCaseSummary",
+          "title": "9. Save final due-diligence case summary (Non-legal demo record)",
+          "responsibleRole": "buyer",
+          "status": "Pending",
+          "note": "Pending.",
+          "evidenceReference": "Pending",
+          "updatedAt": "2026-10-22T09:00:00Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "ev-201",
+          "actor": "Ananya Baruah (Demo Buyer)",
+          "role": "buyer",
+          "action": "Initiated Due-Diligence Case DD-2026-002 for AS-BTR-017",
+          "timestamp": "2026-10-20T12:00:00Z"
+        }
+      ]
+    }
+  ],
+  "SEED_DISCREPANCIES": [
+    {
+      "id": "DSC-001",
+      "parcelId": "AS-KMP-001",
+      "listingId": "lst-1",
+      "field": "Recorded Area (Bigha)",
+      "sellerValue": "2.50 Bigha (2B-2K-10L)",
+      "sellerSourceLabel": "Seller Listing Form & Self-Declaration",
+      "referenceValue": "2.35 Bigha (2B-1K-15L)",
+      "referenceSourceLabel": "Synthetic Survey Fixture (Demo)",
+      "severity": "Medium",
+      "status": "Open — Requires Review",
+      "explanation": "Potential inconsistency requiring review: Seller declared 2.50 Bigha, whereas the synthetic survey reference fixture lists 2.35 Bigha (a difference of 0.15 Bigha / 15 Lessa). This may reflect unrecorded partition or measurement rounding.",
+      "recommendedNextStep": "Request updated trace map sketch and clarify whether 15 Lessa road-widening acquisition occurred.",
+      "reviewerNotes": [
+        {
+          "id": "rn-1",
+          "author": "Debajit Hazarika (Demo Reviewer)",
+          "note": "Initial automated comparison flagged 0.15 Bigha difference. Requested seller clarification in demo.",
+          "timestamp": "2026-10-18T14:25:00Z"
+        }
+      ],
+      "updatedAt": "2026-10-18T14:25:00Z"
+    },
+    {
+      "id": "DSC-002",
+      "parcelId": "AS-BTR-017",
+      "listingId": "lst-4",
+      "field": "Recorded Area (Bigha)",
+      "sellerValue": "12.50 Bigha",
+      "sellerSourceLabel": "Seller Listing Submission",
+      "referenceValue": "12.00 Bigha",
+      "referenceSourceLabel": "Synthetic Revenue Fixture (Demo)",
+      "severity": "Medium",
+      "status": "Open — Requires Review",
+      "explanation": "Potential inconsistency requiring review: Seller entered 12.50 Bigha, while synthetic Patta extract fixture records 12.00 Bigha.",
+      "recommendedNextStep": "Compare physical possession sketch against Patta extract before proceeding.",
+      "reviewerNotes": [],
+      "updatedAt": "2026-10-20T11:00:00Z"
+    },
+    {
+      "id": "DSC-003",
+      "parcelId": "AS-NLB-003",
+      "listingId": "lst-7",
+      "field": "Parcel / Dag Identifier",
+      "sellerValue": "Dag No. 308 (Patta 112)",
+      "sellerSourceLabel": "Seller Form Entry",
+      "referenceValue": "Dag No. 380 (Patta 112)",
+      "referenceSourceLabel": "Uploaded Demo Trace Sketch",
+      "severity": "High",
+      "status": "Evidence Requested",
+      "explanation": "Potential inconsistency requiring review: Seller typed Dag 308 in the form, whereas the attached demo trace sketch clearly labels the plot as Dag 380 (likely digit transposition).",
+      "recommendedNextStep": "Seller should correct the typographical Dag reference or upload the matching trace sketch.",
+      "reviewerNotes": [
+        {
+          "id": "rn-2",
+          "author": "Debajit Hazarika (Demo Reviewer)",
+          "note": "Flagged high priority due to Dag number transposition (308 vs 380). Marked listing as Under Review.",
+          "timestamp": "2026-10-21T14:05:00Z"
+        }
+      ],
+      "updatedAt": "2026-10-21T14:05:00Z"
+    },
+    {
+      "id": "DSC-004",
+      "parcelId": "AS-SON-006",
+      "listingId": "lst-6",
+      "field": "Land Classification",
+      "sellerValue": "Commercial Land",
+      "sellerSourceLabel": "Seller Marketplace Category Selection",
+      "referenceValue": "Agricultural (Sali)",
+      "referenceSourceLabel": "Synthetic Jamabandi Fixture (Demo)",
+      "severity": "High",
+      "status": "Evidence Requested",
+      "explanation": "Potential inconsistency requiring review: Listing is marketed as Commercial Land, but synthetic reference record indicates Agricultural classification with no conversion order attached.",
+      "recommendedNextStep": "Request official reclassification/conversion document or update listing category to Agricultural.",
+      "reviewerNotes": [],
+      "updatedAt": "2026-10-21T09:15:00Z"
+    },
+    {
+      "id": "DSC-005",
+      "parcelId": "AS-CAC-011",
+      "listingId": "lst-11",
+      "field": "Boundary Trace Sketch Document",
+      "sellerValue": "Missing / Not Uploaded",
+      "sellerSourceLabel": "Seller Evidence Checklist",
+      "referenceValue": "Trace Map Required for Demo Review",
+      "referenceSourceLabel": "Platform Completeness Rule",
+      "severity": "Low",
+      "status": "Open — Requires Review",
+      "explanation": "Insufficient information: Boundary trace map has not been uploaded yet for parcel AS-CAC-011.",
+      "recommendedNextStep": "Upload synthetic trace map in LandLocker and link to listing.",
+      "reviewerNotes": [],
+      "updatedAt": "2026-10-21T17:00:00Z"
+    }
+  ],
+  "SEED_DOCUMENTS": [
+    {
+      "id": "DOC-LL-001",
+      "title": "Sample Jamabandi / Patta Extract — AS-KMP-001 (Demo)",
+      "category": "Jamabandi / Patta Extract (Demo)",
+      "parcelId": "AS-KMP-001",
+      "ownerEmail": "seller@demo.dharitrisentu.test",
+      "fileType": "PDF",
+      "fileSizeKB": 1140,
+      "uploadedAt": "2026-10-12T10:00:00Z",
+      "status": "Shared with Buyer",
+      "sharedWithEmails": [
+        "buyer@demo.dharitrisentu.test",
+        "reviewer@demo.dharitrisentu.test"
+      ],
+      "previewSummary": "SYNTHETIC DEMO EXTRACT — Circle: North Guwahati | Village: Changsari | Patta No: 89 | Dag No: 412 | Classification: Agricultural (Rupit) | Recorded Area: 2 Bigha 1 Katha 15 Lessa (2.35 Bigha) | Fictional Pattadar: Pranabjyoti Kalita.",
+      "consentHistory": [
+        {
+          "id": "ch-1",
+          "action": "Uploaded",
+          "actorEmail": "seller@demo.dharitrisentu.test",
+          "timestamp": "2026-10-12T10:00:00Z",
+          "note": "Seller uploaded synthetic Patta extract for AS-KMP-001."
+        },
+        {
+          "id": "ch-2",
+          "action": "Shared",
+          "actorEmail": "seller@demo.dharitrisentu.test",
+          "targetEmail": "reviewer@demo.dharitrisentu.test",
+          "timestamp": "2026-10-12T10:05:00Z",
+          "note": "Granted demo reviewer access for Passport comparison."
+        },
+        {
+          "id": "ch-3",
+          "action": "Shared",
+          "actorEmail": "seller@demo.dharitrisentu.test",
+          "targetEmail": "buyer@demo.dharitrisentu.test",
+          "timestamp": "2026-10-20T14:35:00Z",
+          "note": "Shared with buyer Ananya Baruah following Enquiry ENQ-001."
+        }
+      ]
+    },
+    {
+      "id": "DOC-LL-002",
+      "title": "Sample Boundary Trace Sketch — AS-KMP-001 (Demo)",
+      "category": "Trace Map / Sketch (Demo)",
+      "parcelId": "AS-KMP-001",
+      "ownerEmail": "seller@demo.dharitrisentu.test",
+      "fileType": "PDF",
+      "fileSizeKB": 2380,
+      "uploadedAt": "2026-10-14T09:20:00Z",
+      "status": "Shared with Buyer",
+      "sharedWithEmails": [
+        "buyer@demo.dharitrisentu.test",
+        "reviewer@demo.dharitrisentu.test"
+      ],
+      "previewSummary": "SYNTHETIC TRACE SKETCH — Shows Dag 412 polygon bounded by NH-27 link track on North and drainage bund on South. Annotates 0.15 Bigha bund margin.",
+      "consentHistory": [
+        {
+          "id": "ch-4",
+          "action": "Uploaded",
+          "actorEmail": "seller@demo.dharitrisentu.test",
+          "timestamp": "2026-10-14T09:20:00Z",
+          "note": "Uploaded synthetic trace sketch."
+        },
+        {
+          "id": "ch-5",
+          "action": "Shared",
+          "actorEmail": "seller@demo.dharitrisentu.test",
+          "targetEmail": "buyer@demo.dharitrisentu.test",
+          "timestamp": "2026-10-20T14:38:00Z",
+          "note": "Shared with buyer for Case DD-2026-001."
+        }
+      ]
+    },
+    {
+      "id": "DOC-LL-003",
+      "title": "Sample Registered Sale Deed — AS-KMP-002 Sonapur (Demo)",
+      "category": "Sale Deed (Demo)",
+      "parcelId": "AS-KMP-002",
+      "ownerEmail": "seller@demo.dharitrisentu.test",
+      "fileType": "PDF",
+      "fileSizeKB": 3420,
+      "uploadedAt": "2026-10-15T16:10:00Z",
+      "status": "Shared with Reviewer",
+      "sharedWithEmails": [
+        "reviewer@demo.dharitrisentu.test"
+      ],
+      "previewSummary": "SYNTHETIC DEMO SALE DEED — Deed Ref: DEMO-SR-2021-884 | Parcel: AS-KMP-002 (Sonapur) | Area: 3.00 Bigha | All personal identifiers are fictional.",
+      "consentHistory": [
+        {
+          "id": "ch-6",
+          "action": "Uploaded",
+          "actorEmail": "seller@demo.dharitrisentu.test",
+          "timestamp": "2026-10-15T16:10:00Z",
+          "note": "Uploaded synthetic deed metadata."
+        },
+        {
+          "id": "ch-7",
+          "action": "Shared",
+          "actorEmail": "seller@demo.dharitrisentu.test",
+          "targetEmail": "reviewer@demo.dharitrisentu.test",
+          "timestamp": "2026-10-15T16:12:00Z",
+          "note": "Shared with demo reviewer only."
+        }
+      ]
+    },
+    {
+      "id": "DOC-LL-004",
+      "title": "Buyer Due-Diligence Field Inspection Checklist Note (Demo)",
+      "category": "Seller Declaration (Demo)",
+      "parcelId": "AS-KMP-001",
+      "ownerEmail": "buyer@demo.dharitrisentu.test",
+      "fileType": "PDF",
+      "fileSizeKB": 640,
+      "uploadedAt": "2026-10-21T18:10:00Z",
+      "status": "Private",
+      "sharedWithEmails": [],
+      "previewSummary": "SYNTHETIC BUYER FIELD NOTE — Private checklist prepared by Ananya Baruah recording road width, neighbours, and questions for legal counsel.",
+      "consentHistory": [
+        {
+          "id": "ch-8",
+          "action": "Uploaded",
+          "actorEmail": "buyer@demo.dharitrisentu.test",
+          "timestamp": "2026-10-21T18:10:00Z",
+          "note": "Saved private buyer field note in LandLocker."
+        }
+      ]
+    }
+  ],
+  "SEED_ENQUIRIES": [
+    {
+      "id": "ENQ-001",
+      "listingId": "lst-1",
+      "parcelId": "AS-KMP-001",
+      "listingTitle": "Riverside Agricultural & Tea-Adjacent Land",
+      "buyerEmail": "buyer@demo.dharitrisentu.test",
+      "buyerName": "Ananya Baruah (Demo Buyer)",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "subject": "Clarification on 2.50 Bigha vs 2.35 Bigha recorded area & site visit",
+      "message": "Nomoskar! I reviewed the Land Trust Passport for AS-KMP-001 and noticed a 0.15 Bigha difference between the declared 2.50 Bigha and the synthetic survey record (2.35 Bigha). Could you share the trace map in LandLocker and let me know if Saturday morning works for a site inspection?",
+      "status": "Replied",
+      "createdAt": "2026-10-20T09:15:00Z",
+      "replies": [
+        {
+          "id": "rep-1",
+          "senderEmail": "seller@demo.dharitrisentu.test",
+          "senderName": "Pranabjyoti Kalita (Demo Seller)",
+          "senderRole": "seller",
+          "message": "Nomoskar Ananya! Thank you for checking the Trust Passport. The 0.15 Bigha difference is along the northern panchayat drain bund. I have shared the sample Trace Map (DOC-LL-002) with your account in LandLocker, and Saturday 10:00 AM works well for a site visit.",
+          "timestamp": "2026-10-20T14:40:00Z"
+        }
+      ]
+    },
+    {
+      "id": "ENQ-002",
+      "listingId": "lst-2",
+      "parcelId": "AS-KMP-002",
+      "listingTitle": "Rural Homestead Plot with Areca Grove",
+      "buyerEmail": "buyer@demo.dharitrisentu.test",
+      "buyerName": "Ananya Baruah (Demo Buyer)",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "subject": "Road frontage width and electricity pole proximity in Sonapur",
+      "message": "Hello, is the 22 ft panchayat road along the eastern or southern boundary of AS-KMP-002? Also confirming if all co-sharers have signed the seller declaration.",
+      "status": "Sent",
+      "createdAt": "2026-10-22T11:20:00Z",
+      "replies": []
+    }
+  ],
+  "SEED_LISTINGS": [
+    {
+      "id": "lst-1",
+      "parcelId": "AS-KMP-001",
+      "title": "Riverside Agricultural & Tea-Adjacent Land",
+      "district": "Kamrup",
+      "village": "Changsari",
+      "landType": "Agricultural Land",
+      "areaBigha": 2.5,
+      "recordedAreaBigha": 2.35,
+      "askingPriceINR": 1800000,
+      "benchmarkRatePerBighaINR": 680000,
+      "status": "Published as Demo Listing",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "sellerName": "Pranabjyoti Kalita (Demo Seller)",
+      "description": "Well-drained agricultural plot near NH-27 corridor in Changsari, Kamrup. Suitable for multi-crop cultivation or agro-processing storage. Includes synthetic seller-declared Patta reference and trace sketch for demonstration.",
+      "roadAccess": "18 ft gravel link road connecting to NH-27 service lane (450m)",
+      "floodRiskNote": "Elevated terrace; historical synthetic benchmark indicates low seasonal waterlogging.",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-09-12T10:15:00Z",
+      "featured": true,
+      "polygonPoints": "140,120 290,105 315,235 160,255",
+      "mapCenter": {
+        "x": 225,
+        "y": 180,
+        "lat": 26.2442,
+        "lng": 91.7061
+      },
+      "media": [
+        {
+          "id": "med-1a",
+          "url": "/assets/parcel-agricultural.jpg",
+          "caption": "North-east view across the 2.5 Bigha agricultural plot toward the river terrace (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        },
+        {
+          "id": "med-1b",
+          "url": "/assets/tea-garden-bg.jpg",
+          "caption": "360° Simulated Panoramic Horizon — Upper slope overlooking adjacent estate boundary (Demo Media)",
+          "type": "panorama360",
+          "sourceLabel": "Simulated 360° Panorama (Demo)"
+        },
+        {
+          "id": "med-1c",
+          "url": "/assets/parcel-homestead.jpg",
+          "caption": "Approach path and bamboo boundary fencing along the western edge (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 4,
+        "discrepancyCount": 1,
+        "pendingCount": 1,
+        "notCheckedCount": 1,
+        "overallStatus": "Mismatch Found",
+        "lastReviewedAt": "2026-10-18T14:20:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-KMP-001 (Dag 412 / Patta 89)",
+            "demoReferenceValue": "AS-KMP-001 (Dag 412 / Patta 89)",
+            "sourceLabel": "Synthetic Revenue Fixture (Demo)",
+            "sourceTimestamp": "2026-10-01",
+            "status": "Matched Against Demo Data",
+            "explanation": "Parcel identifier matches the synthetic demonstration fixture."
+          },
+          {
+            "field": "Recorded Area (Bigha)",
+            "sellerSubmittedValue": "2.50 Bigha (2 Bigha 2 Katha 10 Lessa)",
+            "demoReferenceValue": "2.35 Bigha (2 Bigha 1 Katha 15 Lessa)",
+            "sourceLabel": "Synthetic Survey Fixture vs Seller Form",
+            "sourceTimestamp": "2026-10-10",
+            "status": "Mismatch Found",
+            "explanation": "Potential inconsistency requiring review: Seller declared 2.50 Bigha, whereas synthetic reference fixture records 2.35 Bigha (0.15 Bigha variance)."
+          },
+          {
+            "field": "Land Classification",
+            "sellerSubmittedValue": "Agricultural (Rupit / Sali)",
+            "demoReferenceValue": "Agricultural (Rupit / Sali)",
+            "sourceLabel": "Synthetic Classification Fixture (Demo)",
+            "sourceTimestamp": "2026-10-01",
+            "status": "Matched Against Demo Data",
+            "explanation": "Land classification matches between seller declaration and demo reference."
+          },
+          {
+            "field": "Village & Circle",
+            "sellerSubmittedValue": "Changsari, North Guwahati Circle, Kamrup",
+            "demoReferenceValue": "Changsari, North Guwahati Circle, Kamrup",
+            "sourceLabel": "Synthetic Gazetteer Fixture (Demo)",
+            "sourceTimestamp": "2026-10-01",
+            "status": "Matched Against Demo Data",
+            "explanation": "Location details match the synthetic demonstration gazetteer."
+          },
+          {
+            "field": "Recorded Pattadar Name (Synthetic)",
+            "sellerSubmittedValue": "Pranabjyoti Kalita",
+            "demoReferenceValue": "Pranabjyoti Kalita",
+            "sourceLabel": "Seller Declaration vs Demo Patta Extract",
+            "sourceTimestamp": "2026-10-05",
+            "status": "Matched Against Demo Data",
+            "explanation": "Fictional holder name matches the uploaded demo extract."
+          },
+          {
+            "field": "Encumbrance / Mortgage Evidence",
+            "sellerSubmittedValue": "Self-declared Nil Encumbrance (2026)",
+            "demoReferenceValue": "Awaiting Reviewer Inspection of Demo PDF",
+            "sourceLabel": "Seller Uploaded PDF (Demo)",
+            "sourceTimestamp": "2026-10-15",
+            "status": "Pending Authorised Review",
+            "explanation": "Seller uploaded a sample encumbrance statement; human reviewer check is pending in the demo."
+          },
+          {
+            "field": "Civil Court / Revenue Dispute Check",
+            "sellerSubmittedValue": "No litigation declared by seller",
+            "demoReferenceValue": "Not Connected to Judicial Feeds",
+            "sourceLabel": "External Check Unavailable in Prototype",
+            "sourceTimestamp": "N/A",
+            "status": "Not Checked",
+            "explanation": "Prototype has no integration with court or tribunal registries. Independent legal verification is required."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-2",
+      "parcelId": "AS-KMP-002",
+      "title": "Rural Homestead Plot with Areca Grove",
+      "district": "Kamrup",
+      "village": "Sonapur",
+      "landType": "Rural Homestead",
+      "areaBigha": 3,
+      "recordedAreaBigha": 3,
+      "askingPriceINR": 2200000,
+      "benchmarkRatePerBighaINR": 700000,
+      "status": "Published as Demo Listing",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "sellerName": "Pranabjyoti Kalita (Demo Seller)",
+      "description": "Peaceful Bari (homestead) plot in Sonapur featuring mature tamul (areca nut) and bamboo groves, clear earthen boundary bunds, and year-round approach road.",
+      "roadAccess": "22 ft blacktop panchayat road frontage",
+      "floodRiskNote": "High ground above flood plain (Synthetic Demo Note).",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-09-18T11:30:00Z",
+      "featured": true,
+      "polygonPoints": "360,150 510,140 525,270 375,285",
+      "mapCenter": {
+        "x": 445,
+        "y": 210,
+        "lat": 26.1185,
+        "lng": 91.9791
+      },
+      "media": [
+        {
+          "id": "med-2a",
+          "url": "/assets/parcel-homestead.jpg",
+          "caption": "Front entrance and bamboo fence along Sonapur panchayat road (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        },
+        {
+          "id": "med-2b",
+          "url": "/assets/tea-garden-bg.jpg",
+          "caption": "360° Simulated View — Eastern hills backdrop from Sonapur homestead (Demo Media)",
+          "type": "panorama360",
+          "sourceLabel": "Simulated 360° Panorama (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 6,
+        "discrepancyCount": 0,
+        "pendingCount": 0,
+        "notCheckedCount": 1,
+        "overallStatus": "Reviewed in Demo",
+        "lastReviewedAt": "2026-10-19T09:45:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-KMP-002 (Dag 118 / Patta 44)",
+            "demoReferenceValue": "AS-KMP-002 (Dag 118 / Patta 44)",
+            "sourceLabel": "Synthetic Revenue Fixture (Demo)",
+            "sourceTimestamp": "2026-10-02",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches synthetic reference data."
+          },
+          {
+            "field": "Recorded Area (Bigha)",
+            "sellerSubmittedValue": "3.00 Bigha",
+            "demoReferenceValue": "3.00 Bigha",
+            "sourceLabel": "Synthetic Survey Fixture (Demo)",
+            "sourceTimestamp": "2026-10-02",
+            "status": "Matched Against Demo Data",
+            "explanation": "Seller-declared area matches synthetic survey figure."
+          },
+          {
+            "field": "Land Classification",
+            "sellerSubmittedValue": "Bari (Rural Homestead)",
+            "demoReferenceValue": "Bari (Rural Homestead)",
+            "sourceLabel": "Synthetic Classification Fixture (Demo)",
+            "sourceTimestamp": "2026-10-02",
+            "status": "Matched Against Demo Data",
+            "explanation": "Classification consistent across demo sources."
+          },
+          {
+            "field": "Village & Circle",
+            "sellerSubmittedValue": "Sonapur, Sonapur Circle, Kamrup",
+            "demoReferenceValue": "Sonapur, Sonapur Circle, Kamrup",
+            "sourceLabel": "Synthetic Gazetteer Fixture (Demo)",
+            "sourceTimestamp": "2026-10-02",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches demo village directory."
+          },
+          {
+            "field": "Recorded Pattadar Name (Synthetic)",
+            "sellerSubmittedValue": "Pranabjyoti Kalita",
+            "demoReferenceValue": "Pranabjyoti Kalita",
+            "sourceLabel": "Demo Patta Extract",
+            "sourceTimestamp": "2026-10-02",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches synthetic holder field."
+          },
+          {
+            "field": "Encumbrance / Mortgage Evidence",
+            "sellerSubmittedValue": "Demo Non-Encumbrance Note Attached",
+            "demoReferenceValue": "Reviewed by Demo Reviewer (No issues noted)",
+            "sourceLabel": "Demo Reviewer Check",
+            "sourceTimestamp": "2026-10-19",
+            "status": "Reviewed in Demo",
+            "explanation": "Reviewed within the demonstration workflow."
+          },
+          {
+            "field": "Official Sub-Registrar Feed",
+            "sellerSubmittedValue": "Not Connected",
+            "demoReferenceValue": "Not Connected",
+            "sourceLabel": "Prototype Boundary",
+            "sourceTimestamp": "N/A",
+            "status": "Not Checked",
+            "explanation": "Official registration database is not connected in this prototype."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-3",
+      "parcelId": "AS-DIB-003",
+      "title": "Smallholder Tea Garden & Shade Tree Estate Plot",
+      "district": "Dibrugarh",
+      "village": "Chabua",
+      "landType": "Tea Garden Land",
+      "areaBigha": 5,
+      "recordedAreaBigha": 5,
+      "askingPriceINR": 3500000,
+      "benchmarkRatePerBighaINR": 660000,
+      "status": "Published as Demo Listing",
+      "sellerEmail": "seller2@demo.dharitrisentu.test",
+      "sellerName": "Monideepa Gogoi (Demo Seller)",
+      "description": "Productive smallholder tea cultivation plot in Chabua, Dibrugarh. Features contour drainage drains, mature Albizia shade trees, and direct leaf-collection road access.",
+      "roadAccess": "20 ft estate feeder road, 1.2 km from NH-15",
+      "floodRiskNote": "Sloped terrain with established perimeter drainage channels.",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-09-20T08:00:00Z",
+      "featured": true,
+      "polygonPoints": "580,95 760,85 785,220 595,235",
+      "mapCenter": {
+        "x": 680,
+        "y": 160,
+        "lat": 27.4844,
+        "lng": 95.1742
+      },
+      "media": [
+        {
+          "id": "med-3a",
+          "url": "/assets/tea-garden-bg.jpg",
+          "caption": "Morning mist over the 5.0 Bigha Chabua tea plot (Demo Media)",
+          "type": "panorama360",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        },
+        {
+          "id": "med-3b",
+          "url": "/assets/parcel-agricultural.jpg",
+          "caption": "Lower drainage channel and access track (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 5,
+        "discrepancyCount": 0,
+        "pendingCount": 1,
+        "notCheckedCount": 1,
+        "overallStatus": "Pending Authorised Review",
+        "lastReviewedAt": "2026-10-16T16:10:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-DIB-003 (Dag 904 / Patta 210)",
+            "demoReferenceValue": "AS-DIB-003 (Dag 904 / Patta 210)",
+            "sourceLabel": "Synthetic Revenue Fixture (Demo)",
+            "sourceTimestamp": "2026-10-04",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches synthetic reference."
+          },
+          {
+            "field": "Recorded Area (Bigha)",
+            "sellerSubmittedValue": "5.00 Bigha",
+            "demoReferenceValue": "5.00 Bigha",
+            "sourceLabel": "Synthetic Survey Fixture (Demo)",
+            "sourceTimestamp": "2026-10-04",
+            "status": "Matched Against Demo Data",
+            "explanation": "Area matches synthetic survey record."
+          },
+          {
+            "field": "Land Classification",
+            "sellerSubmittedValue": "Special Cultivation / Tea Class (Demo)",
+            "demoReferenceValue": "Special Cultivation / Tea Class (Demo)",
+            "sourceLabel": "Synthetic Classification Fixture",
+            "sourceTimestamp": "2026-10-04",
+            "status": "Matched Against Demo Data",
+            "explanation": "Classification matches demo record."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-4",
+      "parcelId": "AS-BTR-017",
+      "title": "Irrigated Multi-Crop Farmland Near Barama Highway",
+      "district": "Baksa",
+      "village": "Barama",
+      "landType": "Agricultural Land",
+      "areaBigha": 12.5,
+      "recordedAreaBigha": 12,
+      "askingPriceINR": 1800000,
+      "benchmarkRatePerBighaINR": 145000,
+      "status": "Published as Demo Listing",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "sellerName": "Pranabjyoti Kalita (Demo Seller)",
+      "description": "Expansive 12.5 Bigha (seller-declared) fertile tract near Barama in Baksa district. Contains a planted 0.5 Bigha area discrepancy against the 12.0 Bigha synthetic revenue record for due-diligence demonstration.",
+      "roadAccess": "16 ft rural road, 800m from NH-27",
+      "floodRiskNote": "Low-to-moderate seasonal sheet flow; bunds maintained.",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-09-25T14:00:00Z",
+      "featured": true,
+      "polygonPoints": "120,310 310,295 330,445 135,460",
+      "mapCenter": {
+        "x": 225,
+        "y": 380,
+        "lat": 26.5236,
+        "lng": 91.3621
+      },
+      "media": [
+        {
+          "id": "med-4a",
+          "url": "/assets/parcel-agricultural.jpg",
+          "caption": "Barama agricultural tract facing northern foothills (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 4,
+        "discrepancyCount": 1,
+        "pendingCount": 1,
+        "notCheckedCount": 1,
+        "overallStatus": "Mismatch Found",
+        "lastReviewedAt": "2026-10-20T11:00:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-BTR-017",
+            "demoReferenceValue": "AS-BTR-017",
+            "sourceLabel": "Synthetic Revenue Fixture (Demo)",
+            "sourceTimestamp": "2026-10-08",
+            "status": "Matched Against Demo Data",
+            "explanation": "Parcel ID matched."
+          },
+          {
+            "field": "Recorded Area (Bigha)",
+            "sellerSubmittedValue": "12.5 Bigha",
+            "demoReferenceValue": "12.0 Bigha",
+            "sourceLabel": "Synthetic Survey Fixture vs Seller Listing",
+            "sourceTimestamp": "2026-10-08",
+            "status": "Mismatch Found",
+            "explanation": "Potential inconsistency requiring review: Seller declared 12.5 Bigha, while synthetic survey fixture shows 12.0 Bigha."
+          },
+          {
+            "field": "Land Classification",
+            "sellerSubmittedValue": "Agricultural",
+            "demoReferenceValue": "Agricultural",
+            "sourceLabel": "Synthetic Classification Fixture",
+            "sourceTimestamp": "2026-10-08",
+            "status": "Matched Against Demo Data",
+            "explanation": "Classification matches."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-5",
+      "parcelId": "AS-JOR-005",
+      "title": "Residential Plot in Garmur Heritage Corridor",
+      "district": "Jorhat",
+      "village": "Garmur",
+      "landType": "Residential Plot",
+      "areaBigha": 1.2,
+      "recordedAreaBigha": 1.2,
+      "askingPriceINR": 1600000,
+      "benchmarkRatePerBighaINR": 1300000,
+      "status": "Published as Demo Listing",
+      "sellerEmail": "seller2@demo.dharitrisentu.test",
+      "sellerName": "Monideepa Gogoi (Demo Seller)",
+      "description": "Compact 1.2 Bigha residential plot in Garmur, Jorhat. Level earth-filled plot with municipal water connection proximity and quiet neighbourhood road.",
+      "roadAccess": "24 ft paved municipal link road",
+      "floodRiskNote": "Above municipal drainage datum (Synthetic Note).",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-09-28T12:00:00Z",
+      "featured": false,
+      "polygonPoints": "390,330 510,325 520,425 400,435",
+      "mapCenter": {
+        "x": 455,
+        "y": 380,
+        "lat": 26.7509,
+        "lng": 94.2037
+      },
+      "media": [
+        {
+          "id": "med-5a",
+          "url": "/assets/parcel-homestead.jpg",
+          "caption": "Levelled residential plot in Garmur, Jorhat (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 5,
+        "discrepancyCount": 0,
+        "pendingCount": 1,
+        "notCheckedCount": 1,
+        "overallStatus": "Evidence Supplied",
+        "lastReviewedAt": "2026-10-15T10:00:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-JOR-005 (Dag 77 / Patta 19)",
+            "demoReferenceValue": "AS-JOR-005 (Dag 77 / Patta 19)",
+            "sourceLabel": "Synthetic Revenue Fixture (Demo)",
+            "sourceTimestamp": "2026-10-05",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches demo record."
+          },
+          {
+            "field": "Recorded Area (Bigha)",
+            "sellerSubmittedValue": "1.20 Bigha",
+            "demoReferenceValue": "1.20 Bigha",
+            "sourceLabel": "Synthetic Survey Fixture",
+            "sourceTimestamp": "2026-10-05",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches demo record."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-6",
+      "parcelId": "AS-SON-006",
+      "title": "Commercial Highway Frontage Plot Near Tezpur Bypass",
+      "district": "Sonitpur",
+      "village": "Dekargaon",
+      "landType": "Commercial Land",
+      "areaBigha": 2.1,
+      "recordedAreaBigha": 2.1,
+      "askingPriceINR": 3500000,
+      "benchmarkRatePerBighaINR": 1550000,
+      "status": "More Information Required",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "sellerName": "Pranabjyoti Kalita (Demo Seller)",
+      "description": "High-visibility 2.1 Bigha plot along Dekargaon highway belt in Sonitpur. Flagged in demonstration because seller listed it as Commercial Land while synthetic revenue fixture still shows Agricultural classification.",
+      "roadAccess": "Direct 40 ft highway service lane frontage",
+      "floodRiskNote": "High embankment level.",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-10-01T15:45:00Z",
+      "featured": false,
+      "polygonPoints": "580,290 735,280 745,410 590,420",
+      "mapCenter": {
+        "x": 660,
+        "y": 350,
+        "lat": 26.6739,
+        "lng": 92.7512
+      },
+      "media": [
+        {
+          "id": "med-6a",
+          "url": "/assets/parcel-agricultural.jpg",
+          "caption": "Dekargaon road-facing plot boundary (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 3,
+        "discrepancyCount": 1,
+        "pendingCount": 2,
+        "notCheckedCount": 1,
+        "overallStatus": "Mismatch Found",
+        "lastReviewedAt": "2026-10-21T09:15:00Z",
+        "comparisons": [
+          {
+            "field": "Land Classification",
+            "sellerSubmittedValue": "Commercial / Trade Use",
+            "demoReferenceValue": "Agricultural (Sali) — Conversion Order Not Attached",
+            "sourceLabel": "Synthetic Classification Fixture vs Seller Form",
+            "sourceTimestamp": "2026-10-12",
+            "status": "Mismatch Found",
+            "explanation": "Potential inconsistency requiring review: Seller selected Commercial Land, whereas synthetic reference fixture records Agricultural classification without an attached reclassification certificate."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-7",
+      "parcelId": "AS-NLB-003",
+      "title": "Fertile Paddy & Mustard Tract in Tihu Valley",
+      "district": "Nalbari",
+      "village": "Tihu",
+      "landType": "Agricultural Land",
+      "areaBigha": 4,
+      "recordedAreaBigha": 4,
+      "askingPriceINR": 1450000,
+      "benchmarkRatePerBighaINR": 360000,
+      "status": "Under Review",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "sellerName": "Pranabjyoti Kalita (Demo Seller)",
+      "description": "Double-cropped paddy and mustard field in Tihu, Nalbari. Contains a planted Dag/Parcel ID mismatch (Dag 308 vs Dag 380) to demonstrate automated record discrepancy detection.",
+      "roadAccess": "14 ft seasonal farm track",
+      "floodRiskNote": "Moderate monsoon water retention suitable for Sali paddy.",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-10-03T11:20:00Z",
+      "featured": false,
+      "polygonPoints": "790,110 930,105 945,230 800,240",
+      "mapCenter": {
+        "x": 865,
+        "y": 175,
+        "lat": 26.4751,
+        "lng": 91.2684
+      },
+      "media": [
+        {
+          "id": "med-7a",
+          "url": "/assets/parcel-agricultural.jpg",
+          "caption": "Tihu paddy field view looking east (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 3,
+        "discrepancyCount": 1,
+        "pendingCount": 2,
+        "notCheckedCount": 1,
+        "overallStatus": "Mismatch Found",
+        "lastReviewedAt": "2026-10-21T14:00:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-NLB-003 (Dag 308 / Patta 112)",
+            "demoReferenceValue": "AS-NLB-003 (Dag 380 / Patta 112)",
+            "sourceLabel": "Seller Form vs Uploaded Demo Trace Sketch",
+            "sourceTimestamp": "2026-10-14",
+            "status": "Mismatch Found",
+            "explanation": "Potential inconsistency requiring review: Seller typed Dag 308 in the listing form, but the uploaded demo trace map references Dag 380."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-8",
+      "parcelId": "AS-SIV-008",
+      "title": "Ancestral Homestead Near Joysagar Tank Belt",
+      "district": "Sivasagar",
+      "village": "Bhatiapar",
+      "landType": "Rural Homestead",
+      "areaBigha": 2,
+      "recordedAreaBigha": 2,
+      "askingPriceINR": 1950000,
+      "benchmarkRatePerBighaINR": 950000,
+      "status": "Published as Demo Listing",
+      "sellerEmail": "seller2@demo.dharitrisentu.test",
+      "sellerName": "Monideepa Gogoi (Demo Seller)",
+      "description": "Well-maintained 2.0 Bigha homestead land in Bhatiapar, Sivasagar. Includes mature fruit trees, clear boundary masonry pillars, and complete demonstration record pack.",
+      "roadAccess": "20 ft paved road access",
+      "floodRiskNote": "Elevated ground; no historical flooding in synthetic log.",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-10-04T09:10:00Z",
+      "featured": false,
+      "polygonPoints": "790,285 935,280 945,405 800,415",
+      "mapCenter": {
+        "x": 865,
+        "y": 345,
+        "lat": 26.9522,
+        "lng": 94.6214
+      },
+      "media": [
+        {
+          "id": "med-8a",
+          "url": "/assets/parcel-homestead.jpg",
+          "caption": "Bhatiapar homestead plot with fruit orchard (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 6,
+        "discrepancyCount": 0,
+        "pendingCount": 0,
+        "notCheckedCount": 1,
+        "overallStatus": "Reviewed in Demo",
+        "lastReviewedAt": "2026-10-18T11:30:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-SIV-008 (Dag 55 / Patta 14)",
+            "demoReferenceValue": "AS-SIV-008 (Dag 55 / Patta 14)",
+            "sourceLabel": "Synthetic Revenue Fixture (Demo)",
+            "sourceTimestamp": "2026-10-04",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches demo record."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-9",
+      "parcelId": "AS-NGN-009",
+      "title": "Irrigated Boro & Sali Paddy Plot in Kaliabor",
+      "district": "Nagaon",
+      "village": "Kaliabor",
+      "landType": "Agricultural Land",
+      "areaBigha": 6.5,
+      "recordedAreaBigha": 6.5,
+      "askingPriceINR": 2400000,
+      "benchmarkRatePerBighaINR": 365000,
+      "status": "Published as Demo Listing",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "sellerName": "Pranabjyoti Kalita (Demo Seller)",
+      "description": "High-yield 6.5 Bigha agricultural land in Kaliabor subdivision, Nagaon. Shallow tube-well irrigation point installed; direct tractor access.",
+      "roadAccess": "15 ft farm road, 1.5 km from four-lane highway",
+      "floodRiskNote": "Low-risk zone with canal drainage.",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-10-06T10:00:00Z",
+      "featured": false,
+      "polygonPoints": "120,480 285,475 295,565 130,575",
+      "mapCenter": {
+        "x": 205,
+        "y": 525,
+        "lat": 26.5412,
+        "lng": 92.9315
+      },
+      "media": [
+        {
+          "id": "med-9a",
+          "url": "/assets/parcel-agricultural.jpg",
+          "caption": "Kaliabor agricultural plot during post-monsoon season (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 5,
+        "discrepancyCount": 0,
+        "pendingCount": 1,
+        "notCheckedCount": 1,
+        "overallStatus": "Matched Against Demo Data",
+        "lastReviewedAt": "2026-10-17T15:00:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-NGN-009 (Dag 612 / Patta 203)",
+            "demoReferenceValue": "AS-NGN-009 (Dag 612 / Patta 203)",
+            "sourceLabel": "Synthetic Revenue Fixture (Demo)",
+            "sourceTimestamp": "2026-10-06",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches demo record."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-10",
+      "parcelId": "AS-TIN-010",
+      "title": "Organic Small Tea & Citrus Garden Plot",
+      "district": "Tinsukia",
+      "village": "Doomdooma",
+      "landType": "Tea Garden Land",
+      "areaBigha": 8,
+      "recordedAreaBigha": 8,
+      "askingPriceINR": 4800000,
+      "benchmarkRatePerBighaINR": 590000,
+      "status": "Published as Demo Listing",
+      "sellerEmail": "seller2@demo.dharitrisentu.test",
+      "sellerName": "Monideepa Gogoi (Demo Seller)",
+      "description": "8.0 Bigha intercropped tea and Assam lemon (Kaji Nemu) estate plot in Doomdooma, Tinsukia. Well-maintained plucking lanes and boundary fencing.",
+      "roadAccess": "18 ft all-weather gravel road",
+      "floodRiskNote": "Highland red-loam terrace; zero waterlogging.",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-10-08T13:30:00Z",
+      "featured": false,
+      "polygonPoints": "345,475 510,470 520,565 355,575",
+      "mapCenter": {
+        "x": 430,
+        "y": 520,
+        "lat": 27.5702,
+        "lng": 95.5684
+      },
+      "media": [
+        {
+          "id": "med-10a",
+          "url": "/assets/tea-garden-bg.jpg",
+          "caption": "Doomdooma tea and citrus estate terrace (Demo Media)",
+          "type": "panorama360",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 5,
+        "discrepancyCount": 0,
+        "pendingCount": 1,
+        "notCheckedCount": 1,
+        "overallStatus": "Reviewed in Demo",
+        "lastReviewedAt": "2026-10-19T12:00:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-TIN-010 (Dag 214 / Patta 78)",
+            "demoReferenceValue": "AS-TIN-010 (Dag 214 / Patta 78)",
+            "sourceLabel": "Synthetic Revenue Fixture (Demo)",
+            "sourceTimestamp": "2026-10-08",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches demo record."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-11",
+      "parcelId": "AS-CAC-011",
+      "title": "Suburban Residential Plot Near Silchar Link Road",
+      "district": "Cachar",
+      "village": "Udarbond",
+      "landType": "Residential Plot",
+      "areaBigha": 1.5,
+      "recordedAreaBigha": 1.5,
+      "askingPriceINR": 2100000,
+      "benchmarkRatePerBighaINR": 1380000,
+      "status": "Under Review",
+      "sellerEmail": "seller2@demo.dharitrisentu.test",
+      "sellerName": "Monideepa Gogoi (Demo Seller)",
+      "description": "1.5 Bigha residential plot in Udarbond, Cachar. Flagged in demo because the supporting trace map document is still missing from the seller submission.",
+      "roadAccess": "20 ft paved colony road",
+      "floodRiskNote": "Raised plinth fill completed in 2025 (Synthetic Note).",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-10-10T16:00:00Z",
+      "featured": false,
+      "polygonPoints": "565,475 725,470 735,565 575,575",
+      "mapCenter": {
+        "x": 650,
+        "y": 520,
+        "lat": 24.8812,
+        "lng": 92.8834
+      },
+      "media": [
+        {
+          "id": "med-11a",
+          "url": "/assets/parcel-homestead.jpg",
+          "caption": "Udarbond residential plot frontage (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 3,
+        "discrepancyCount": 1,
+        "pendingCount": 2,
+        "notCheckedCount": 1,
+        "overallStatus": "Unable to Determine",
+        "lastReviewedAt": "2026-10-21T17:00:00Z",
+        "comparisons": [
+          {
+            "field": "Trace Map / Boundary Sketch Reference",
+            "sellerSubmittedValue": "Not Attached (Pending Upload)",
+            "demoReferenceValue": "Required for Demo Boundary Comparison",
+            "sourceLabel": "Document Completeness Check",
+            "sourceTimestamp": "2026-10-21",
+            "status": "Unable to Determine",
+            "explanation": "Insufficient information: Seller has not yet uploaded the sample trace map required to compare boundary dimensions."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-12",
+      "parcelId": "AS-GOL-012",
+      "title": "Agro-Tourism & Homestead Plot Near Kaziranga Fringe",
+      "district": "Golaghat",
+      "village": "Bokakhat",
+      "landType": "Rural Homestead",
+      "areaBigha": 3.5,
+      "recordedAreaBigha": 3.5,
+      "askingPriceINR": 2800000,
+      "benchmarkRatePerBighaINR": 790000,
+      "status": "Published as Demo Listing",
+      "sellerEmail": "seller@demo.dharitrisentu.test",
+      "sellerName": "Pranabjyoti Kalita (Demo Seller)",
+      "description": "Scenic 3.5 Bigha rural homestead outside restricted eco-sensitive zone in Bokakhat, Golaghat. Ideal for sustainable homestead or orchard use.",
+      "roadAccess": "22 ft rural link road off NH-715",
+      "floodRiskNote": "Southern highland side of highway corridor.",
+      "sellerDeclarationAccepted": true,
+      "submittedAt": "2026-10-12T09:30:00Z",
+      "featured": true,
+      "polygonPoints": "775,470 940,465 950,565 785,575",
+      "mapCenter": {
+        "x": 860,
+        "y": 520,
+        "lat": 26.6385,
+        "lng": 93.5971
+      },
+      "media": [
+        {
+          "id": "med-12a",
+          "url": "/assets/parcel-homestead.jpg",
+          "caption": "Bokakhat 3.5 Bigha homestead and orchard view (Demo Media)",
+          "type": "photo",
+          "sourceLabel": "Seller Uploaded Illustration (Demo)"
+        },
+        {
+          "id": "med-12b",
+          "url": "/assets/tea-garden-bg.jpg",
+          "caption": "360° Simulated View — Karbi hills horizon from Bokakhat plot (Demo Media)",
+          "type": "panorama360",
+          "sourceLabel": "Simulated 360° Panorama (Demo)"
+        }
+      ],
+      "passportSummary": {
+        "matchedCount": 6,
+        "discrepancyCount": 0,
+        "pendingCount": 0,
+        "notCheckedCount": 1,
+        "overallStatus": "Reviewed in Demo",
+        "lastReviewedAt": "2026-10-20T16:30:00Z",
+        "comparisons": [
+          {
+            "field": "Parcel / Dag Identifier",
+            "sellerSubmittedValue": "AS-GOL-012 (Dag 149 / Patta 63)",
+            "demoReferenceValue": "AS-GOL-012 (Dag 149 / Patta 63)",
+            "sourceLabel": "Synthetic Revenue Fixture (Demo)",
+            "sourceTimestamp": "2026-10-12",
+            "status": "Matched Against Demo Data",
+            "explanation": "Matches demo record."
+          }
+        ]
+      }
+    }
+  ],
+  "SEED_USERS": [
+    {
+      "id": "usr-buyer-1",
+      "email": "ananya@dharitrisentu.in",
+      "name": "Ananya Baruah",
+      "role": "buyer",
+      "phone": "+91-94350-00101",
+      "district": "Kamrup",
+      "createdAt": "2026-01-15T09:00:00Z"
+    },
+    {
+      "id": "usr-seller-1",
+      "email": "pranabjyoti@dharitrisentu.in",
+      "name": "Pranabjyoti Kalita",
+      "role": "seller",
+      "phone": "+91-94350-00202",
+      "district": "Kamrup",
+      "createdAt": "2026-01-10T10:30:00Z"
+    },
+    {
+      "id": "usr-seller-2",
+      "email": "monideepa@dharitrisentu.in",
+      "name": "Monideepa Gogoi",
+      "role": "seller",
+      "phone": "+91-94350-00209",
+      "district": "Dibrugarh",
+      "createdAt": "2026-02-01T11:00:00Z"
+    },
+    {
+      "id": "usr-reviewer-1",
+      "email": "debajit@assam.gov.in",
+      "name": "Debajit Hazarika",
+      "role": "reviewer",
+      "phone": "+91-94350-00999",
+      "district": "Kamrup Metropolitan",
+      "createdAt": "2026-01-01T08:00:00Z"
+    }
+  ]
+}

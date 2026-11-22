@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: dharitri-sentu
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: ENABLE_DEMO_ACCOUNTS
+        value: "true"
+      - key: SIMULATE_CLAMAV
+        value: "true"
+      - key: VITE_MAPTILER_API_KEY
+        value: "1Er6BdS2HVkdpdxxG7dr"

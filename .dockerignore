@@ -1,0 +1,12 @@
+node_modules
+.dist
+dist
+.env
+.env.*
+!.env.production.example
+.git
+.gitignore
+*.log
+server/storage
+playwright-report
+test-results

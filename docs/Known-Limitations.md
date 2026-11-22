@@ -1,0 +1,11 @@
+# Known Limitations and External Dependencies
+
+1. **Synthetic parcel data:** The default listings, owner names, Dag/Patta references, coordinates, polygons, valuations, risk attributes and record comparisons are fictional demo fixtures. The app does not connect to official Assam land records by default.
+2. **Official land-record access:** A generic server-side connector exists, but it requires an authorised HTTPS endpoint, credentials, response schema validation and provider-specific mapping. Do not label fields government verified until they are independently confirmed against that source.
+3. **Map tiles vs cadastral geometry:** Satellite imagery is not an official cadastral layer. A MapTiler key only enables that provider's tiles; it does not supply title records or official parcel boundaries. Without a valid MapTiler key, the app falls back to configured open/public tile sources, subject to their usage terms.
+4. **DigiLocker / Setu:** The Setu request, callback status check, document catalogue and consented document-fetch paths are implemented. They still require end-to-end testing with the actual Setu account, an approved publicly reachable HTTPS callback and a review of the documents available in that account. No Jamabandi/Patta coverage is assumed; retrieval does not prove title.
+5. **Antivirus scanning:** Uploads without a clean ClamAV result stay encrypted in quarantine. They cannot be shared or downloaded or displayed as public listing photos. Install/configure ClamAV, then rescan quarantined files.
+6. **Password reset:** The endpoint rejects reset requests if a verified email delivery adapter is unavailable. SMTP settings alone are not enough.
+7. **Deployment architecture:** The backend currently uses SQLite and local filesystem storage for an integrated single-instance deployment. Production hosting must provide durable volumes or migrate storage/database, plus backups and restore testing.
+8. **Legal status:** App-created checklists and reviewer notes are internal workflow outcomes, not proof of title, encumbrance clearance, lawful transferability, official valuation or legal authenticity.
+9. **Visual-only prototypes:** Any standalone HTML preview is for design evaluation only and does not use the API or provide server-backed persistence/security. Use the React application to test connected workflows.

@@ -1,0 +1,22 @@
+const check = (label, ok, detail) => console.log(`${ok ? 'PASS' : 'WARN'}  ${label}${detail ? ` — ${detail}` : ''}`);
+const val = (...names) => names.map(n => String(process.env[n] || '').trim()).find(Boolean) || '';
+const base = val('SETU_DIGILOCKER_BASE_URL', 'DIGILOCKER_BASE_URL') || 'https://dg-sandbox.setu.co';
+const clientId = val('SETU_DIGILOCKER_CLIENT_ID', 'DIGILOCKER_CLIENT_ID');
+const secret = val('SETU_DIGILOCKER_CLIENT_SECRET', 'DIGILOCKER_CLIENT_SECRET');
+const product = val('SETU_DIGILOCKER_PRODUCT_INSTANCE_ID', 'DIGILOCKER_PRODUCT_INSTANCE_ID');
+const callback = val('SETU_DIGILOCKER_REDIRECT_URI', 'DIGILOCKER_REDIRECT_URI');
+const allowedBase = ['https://dg-sandbox.setu.co', 'https://dg.setu.co'].includes(base.replace(/\/+$/, ''));
+let callbackValid = false;
+try { const u = new URL(callback); callbackValid = u.protocol === 'https:' && !u.username && !u.password; } catch {}
+check('Node version', Number(process.versions.node.split('.')[0]) >= 22, process.versions.node);
+check('VITE_API_MODE', val('VITE_API_MODE') !== 'false', val('VITE_API_MODE') || 'dev launcher defaults to API mode; explicit true recommended');
+check('Setu base URL', allowedBase, allowedBase ? base : 'Use the Setu DigiLocker sandbox or production URL documented for your product');
+check('Setu client ID present', Boolean(clientId));
+check('Setu client secret present', Boolean(secret), 'value intentionally not printed');
+check('Setu product instance present', Boolean(product));
+check('Setu callback', callbackValid, callbackValid ? 'HTTPS URL configured; reachability/registration still must be tested' : 'Set a publicly reachable HTTPS callback registered with Setu; localhost will not work for provider callbacks');
+check('Document encryption key', Boolean(val('DOCUMENT_ENCRYPTION_KEY')), 'key value intentionally not printed');
+check('Gemini key present', Boolean(val('GEMINI_API_KEY')), 'key value intentionally not printed');
+check('ClamAV scanner', Boolean(val('CLAMSCAN_BIN')), 'uploads remain quarantined when scanning is unavailable');
+check('Assam land-record connector', Boolean(val('ASSAM_LAND_RECORDS_LOOKUP_URL') && val('ASSAM_LAND_RECORDS_API_KEY')), 'leave disconnected until an authorised API is provided');
+console.log('Doctor checks configuration presence only; it does not verify credentials with external providers.');
